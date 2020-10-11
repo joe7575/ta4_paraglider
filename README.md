@@ -11,11 +11,11 @@ This mod is based on the work from m492
 
 ### Instruction
 
-Jump from a hill and use the paraglider to start the flight.
-W = increases speed
-S = decreases speed
-D = right turn
-A = left turn
+Jump from a hill and use the paraglider to start the flight.  
+W = increases speed  
+S = decreases speed  
+D = right turn  
+A = left turn  
 
 
 ### License
