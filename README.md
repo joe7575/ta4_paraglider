@@ -5,7 +5,7 @@
 ![screenshot](https://github.com/joe7575/ta4_paraglider/blob/main/screenshot.png)
 
 
-This mod is based on the work from m492	
+This mod is based on the work from m492	 
 (https://forum.minetest.net/viewtopic.php?t=24639)
 
 
@@ -20,8 +20,8 @@ A = left turn
 
 ### License
 
-Copyright (C) 2020 m492, Joachim Stolberg
-Code: GNU GPL version 3. See LICENSE.txt
+Copyright (C) 2020 m492, Joachim Stolberg  
+Code: GNU GPL version 3. See LICENSE.txt  
 Textures: CC BY-SA 3.0
 
 
