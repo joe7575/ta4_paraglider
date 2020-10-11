@@ -2,8 +2,7 @@
 
 **A Paraglider for techage with TA4 recipe**
 
-![screenshot](https://github.com/joe7575/ta4_paraglider/blob/master/screenshot.png)
-
+![screenshot](https://github.com/joe7575/ta4_paraglider/blob/main/screenshot.png)
 
 
 This mod is based on the work from m492	
