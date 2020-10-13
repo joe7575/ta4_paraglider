@@ -36,6 +36,14 @@ minetest.register_tool(
 				return
 			end
 
+			-- Player physics acces control, according to:
+			-- https://github.com/joe7575/techage_modepack/blob/master/player_physics_design_pattern.md
+			local pmeta = player:get_meta()
+			if pmeta:get_int("player_physics_locked") ~= 0 then
+				return
+			end
+			pmeta:set_int("player_physics_locked", 1)
+				
 			if node_under.name == "air" then
 				-- Spawn paraglider
 				pos.y = pos.y + 3
@@ -133,6 +141,8 @@ minetest.register_entity(
 
 				if node_under.name ~= "air" then
 					default.player_attached[self.attached] = false
+					local player = minetest.get_player_by_name(self.attached)
+					player:get_meta():set_int("player_physics_locked", 0)
 				end
 			else
 				self.object:remove()
@@ -143,6 +153,8 @@ minetest.register_entity(
 				if self.attached ~= nil then
 					default.player_attached[self.attached] = false
 					self.object:set_detach()
+					local player = minetest.get_player_by_name(self.attached)
+					player:get_meta():set_int("player_physics_locked", 0)
 				end
 				self.object:remove()
 			end
