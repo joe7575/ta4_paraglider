@@ -161,6 +161,30 @@ minetest.register_entity(
 		end
 	})
 
+local function restore_player(player)
+	local name = player:get_player_name()
+	if name and default.player_attached[name] then
+		default.player_attached[name] = false
+		player:get_meta():set_int("player_physics_locked", 0)
+	end
+end
+
+minetest.register_on_joinplayer(function(player)
+	restore_player(player)
+end)
+
+minetest.register_on_respawnplayer(function(player)
+	player:get_meta():set_int("player_physics_locked", 0)
+end)
+
+minetest.register_on_leaveplayer(function(player)
+	restore_player(player)
+end)
+
+minetest.register_on_dieplayer(function(player)
+	player:get_meta():set_int("player_physics_locked", 0)
+end)
+
 minetest.register_craft({
 	output = "ta4_paraglider:paraglider",
 	recipe = {
